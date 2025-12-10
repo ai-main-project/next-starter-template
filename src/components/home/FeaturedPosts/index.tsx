@@ -62,7 +62,17 @@ export const FeaturedPosts = () => {
                                     {post.coverImage ? (
                                         <img src={post.coverImage} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     ) : (
-                                        <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #2a8af6, #a853ba)' }} />
+                                        <div className={styles.placeholderCard}>
+                                            <div className={styles.placeholderGradient} />
+                                            <div className={styles.placeholderContent}>
+                                                <h3 className={styles.placeholderTitle}>{post.title}</h3>
+                                                <div className={styles.placeholderTags}>
+                                                    {post.tags.slice(0, 2).map(tag => (
+                                                        <span key={tag} className={styles.placeholderTag}>{tag}</span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
                                     )}
                                 </div>
                                 <div className={styles.content}>

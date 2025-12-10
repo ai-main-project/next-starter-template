@@ -2,7 +2,7 @@
     border-top: 1px solid var(--border-glass);
     padding: 4rem 0 2rem;
     margin-top: 4rem;
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+    background: var(--bg-panel);
 }
 
 .container {
