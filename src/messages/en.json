@@ -1,0 +1,74 @@
+{
+  "Common": {
+    "home": "Home",
+    "posts": "Posts",
+    "about": "About",
+    "menu": "Menu",
+    "readMore": "Read Articles",
+    "aboutMe": "About Me",
+    "viewAll": "View All Posts →",
+    "latestArticles": "Latest Articles",
+    "latestSubtitle": "Thoughts on development, design, and workflow.",
+    "footerBrand": "Exploring code, design, and the future of web development.",
+    "navigation": "Navigation",
+    "social": "Social",
+    "rights": "All rights reserved."
+  },
+  "Hero": {
+    "title1": "Design. Code.",
+    "title2": "Create.",
+    "subtitle": "A digital garden exploring the intersection of design engineering, user experience, and modern web technologies."
+  },
+  "About": {
+    "title": "About Me",
+    "bio": "I'm a passionate developer and designer focused on building beautiful, accessible, and performant web experiences. With a background in both engineering and design, I bridge the gap between code and creativity.",
+    "connect": "Connect",
+    "newsletterTitle": "Subscribe to my newsletter",
+    "newsletterDesc": "Get the latest articles and insights delivered straight to your inbox.",
+    "emailPlaceholder": "your@email.com",
+    "subscribe": "Subscribe",
+    "subscribing": "Subscribing...",
+    "success": "Thanks for subscribing!",
+    "error": "Something went wrong. Please try again."
+  },
+  "Blog": {
+    "title": "Blog",
+    "create": "Create New Article",
+    "edit": "Edit Article",
+    "save": "Save Article",
+    "saving": "Saving...",
+    "form": {
+      "title": "Title",
+      "slug": "Slug",
+      "excerpt": "Excerpt",
+      "tags": "Tags",
+      "content": "Content (Markdown)",
+      "preview": "Preview"
+    },
+    "placeholders": {
+      "title": "Article Title",
+      "slug": "article-slug",
+      "excerpt": "Brief description...",
+      "tags": "tech, life, coding (comma separated)",
+      "content": "# Hello World"
+    },
+    "backToBlog": "Back to Blog"
+  },
+  "Resume": {
+    "experience": "Experience",
+    "skills": "Skills",
+    "present": "Present",
+    "roles": {
+      "senior": "Senior Frontend Engineer",
+      "developer": "Frontend Developer"
+    },
+    "companies": {
+      "techCorp": "Tech Corp",
+      "startup": "Startup Inc"
+    },
+    "descriptions": {
+      "senior": "Leading the frontend team, building scalable web applications using React and Next.js. Architected the core design system and improved site performance by 40%.",
+      "developer": "Developed key features for the main product dashboard. Collaborated closely with designers to implement pixel-perfect UIs."
+    }
+  }
+}
