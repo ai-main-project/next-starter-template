@@ -3,8 +3,8 @@ import createMiddleware from 'next-intl/middleware';
 
 const intlMiddleware = createMiddleware({
   locales: ['en', 'zh'],
-  defaultLocale: 'zh'
-  // localeDetection: false
+  defaultLocale: 'en',
+  localeDetection: false
 });
 
 const isProtectedRoute = createRouteMatcher([
