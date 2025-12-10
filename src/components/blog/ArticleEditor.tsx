@@ -41,11 +41,11 @@ export const ArticleEditor = () => {
             });
 
             if (res.ok) {
-                const savedArticle = await res.json();
+                const savedArticle = await res.json() as any;
                 alert('Saved successfully!');
                 router.push(`/blog/${savedArticle.id}`);
             } else {
-                const error = await res.json();
+                const error = await res.json() as any;
                 alert(`Error saving: ${error.error || 'Unknown error'}`);
             }
         } catch (error) {

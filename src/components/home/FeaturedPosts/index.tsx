@@ -20,7 +20,7 @@ export const FeaturedPosts = () => {
             try {
                 const res = await fetch('/api/articles');
                 if (res.ok) {
-                    const data = await res.json();
+                    const data = await res.json() as any;
                     setPosts(data.slice(0, 3)); // Only show top 3
                 }
             } catch (error) {

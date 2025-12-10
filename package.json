@@ -12,9 +12,9 @@
 		"publish": true
 	},
 	"dependencies": {
-		"@opennextjs/cloudflare": "1.14.0",
 		"@clerk/localizations": "^3.26.2",
 		"@clerk/nextjs": "^6.33.7",
+		"@opennextjs/cloudflare": "1.14.0",
 		"@tanstack/react-query": "^5.90.5",
 		"@trpc/client": "^11.6.0",
 		"@trpc/next": "^11.6.0",
@@ -37,14 +37,14 @@
 	"devDependencies": {
 		"@eslint/eslintrc": "3",
 		"@tailwindcss/postcss": "4.1.17",
-		"eslint-config-next": "16.0.7",
-		"tailwindcss": "4.1.17",
-		"wrangler": "4.51.0",
 		"@types/node": "^22.15.3",
 		"@types/react": "19.1.0",
 		"@types/react-dom": "19.1.1",
 		"eslint": "^9.34.0",
-		"typescript": "5.9.2"
+		"eslint-config-next": "16.0.7",
+		"tailwindcss": "4.1.17",
+		"typescript": "5.9.2",
+		"wrangler": "4.51.0"
 	},
 	"private": true,
 	"scripts": {
