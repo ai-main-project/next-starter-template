@@ -7,7 +7,10 @@
 	"name": "vist-blog",
 	"main": ".open-next/worker.js",
 	"compatibility_date": "2025-10-08",
-	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"compatibility_flags": [
+		"nodejs_compat",
+		"global_fetch_strictly_public"
+	],
 	"assets": {
 		"binding": "ASSETS",
 		"directory": ".open-next/assets"
@@ -15,5 +18,12 @@
 	"observability": {
 		"enabled": true
 	},
-	"upload_source_maps": true
+	"upload_source_maps": true,
+	"d1_databases": [
+		{
+			"binding": "blog_stats",
+			"database_name": "blog_stats",
+			"database_id": "05007dbc-0001-4de1-83d5-475d4cb97fce"
+		}
+	]
 }
