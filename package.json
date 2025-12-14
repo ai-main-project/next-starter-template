@@ -9,15 +9,10 @@
 		"categories": [],
 		"preview_icon_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/05eee9e0-2c04-48fd-11bf-84e65f839000/public",
 		"preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/4e913a56-fd99-4372-0586-9f1364173100/preview",
-		"publish": true,
-		"db:init": "npx wrangler d1 execute blog_stats --file schema.sql",
-		"db:init:local": "npx wrangler d1 execute blog_stats --file schema.sql --local",
-		"db:init:remote": "wrangler d1 execute blog_stats --file schema.sql --remote"
+		"publish": true
 	},
 	"dependencies": {
-		"@clerk/localizations": "^3.26.2",
-		"@clerk/nextjs": "^6.33.7",
-		"@opennextjs/cloudflare": "^1.14.0",
+		"@opennextjs/cloudflare": "^1.14.6",
 		"@tanstack/react-query": "^5.90.5",
 		"@trpc/client": "^11.6.0",
 		"@trpc/next": "^11.6.0",
@@ -48,7 +43,7 @@
 		"eslint-config-next": "16.0.7",
 		"tailwindcss": "4.1.17",
 		"typescript": "5.9.2",
-		"wrangler": "4.51.0"
+		"wrangler": "^4.53.0"
 	},
 	"private": true,
 	"scripts": {
@@ -59,6 +54,9 @@
 		"dev": "next dev",
 		"lint": "next lint",
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-		"start": "next start"
+		"start": "next start",
+		"db:init": "npx wrangler d1 execute blog_stats --file schema.sql",
+		"db:init:local": "npx wrangler d1 execute blog_stats --file schema.sql --local",
+		"db:init:remote": "wrangler d1 execute blog_stats --file schema.sql --remote"
 	}
 }

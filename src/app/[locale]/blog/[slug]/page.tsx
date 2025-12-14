@@ -1,10 +1,17 @@
-import { getArticleById } from '@/lib/articles';
+import { getArticleBySlug, getArticles } from '@/lib/articles';
 import { ArticleDetail } from '@/components/blog/ArticleDetail';
 import { notFound } from 'next/navigation';
 
+export async function generateStaticParams() {
+    const articles = await getArticles();
+    return articles.map((article) => ({
+        slug: article.slug,
+    }));
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = await params; // This is the ID
-    const article = await getArticleById(slug);
+    const { slug } = await params;
+    const article = await getArticleBySlug(slug);
 
     if (!article) {
         notFound();

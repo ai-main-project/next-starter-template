@@ -1,3 +1,7 @@
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
 export interface Article {
   id: string;
   title: string;
@@ -10,60 +14,73 @@ export interface Article {
   updatedAt: string;
 }
 
-// In-memory storage for Cloudflare compatibility
-let articles: Article[] = [
-  {
-    id: '1',
-    title: 'Welcome to Next.js on Cloudflare',
-    slug: 'welcome-nextjs-cloudflare',
-    content: '# Welcome\n\nThis is a demo article running on Cloudflare Pages.',
-    excerpt: 'A sample article to demonstrate the blog functionality.',
-    tags: ['Next.js', 'Cloudflare', 'Demo'],
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  }
-];
+const postsDirectory = path.join(process.cwd(), 'posts');
 
 export async function getArticles(): Promise<Article[]> {
-  return articles.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+  if (!fs.existsSync(postsDirectory)) {
+    return [];
+  }
+
+  const fileNames = fs.readdirSync(postsDirectory);
+  const allArticlesData = fileNames
+    .filter((fileName) => fileName.endsWith('.md'))
+    .map((fileName) => {
+      const slug = fileName.replace(/\.md$/, '');
+      const fullPath = path.join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const { data, content } = matter(fileContents);
+
+      return {
+        id: slug,
+        slug,
+        content,
+        title: data.title || 'Untitled',
+        excerpt: data.excerpt || '',
+        tags: data.tags || [],
+        coverImage: data.coverImage,
+        createdAt: data.date || new Date().toISOString(),
+        updatedAt: data.date || new Date().toISOString(),
+      } as Article;
+    });
+
+  // Sort posts by date
+  return allArticlesData.sort((a, b) => {
+    if (a.createdAt < b.createdAt) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
 }
 
 export async function getArticleBySlug(slug: string): Promise<Article | null> {
-  return articles.find((article) => article.slug === slug) || null;
-}
+  try {
+    const fullPath = path.join(postsDirectory, `${slug}.md`);
+    if (!fs.existsSync(fullPath)) {
+      return null;
+    }
 
-export async function getArticleById(id: string): Promise<Article | null> {
-  return articles.find((article) => article.id === id) || null;
-}
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
 
-export async function createArticle(article: Omit<Article, 'id' | 'createdAt' | 'updatedAt'>): Promise<Article> {
-  // Check for duplicate slug
-  if (articles.some(a => a.slug === article.slug)) {
-    throw new Error('Slug already exists');
+    return {
+      id: slug,
+      slug,
+      content,
+      title: data.title || 'Untitled',
+      excerpt: data.excerpt || '',
+      tags: data.tags || [],
+      coverImage: data.coverImage,
+      createdAt: data.date || new Date().toISOString(),
+      updatedAt: data.date || new Date().toISOString(),
+    } as Article;
+  } catch (error) {
+    return null;
   }
-
-  const newArticle: Article = {
-    ...article,
-    id: crypto.randomUUID(),
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  };
-
-  articles.push(newArticle);
-  return newArticle;
 }
 
-export async function updateArticle(slug: string, updates: Partial<Omit<Article, 'id' | 'createdAt'>>): Promise<Article | null> {
-  const index = articles.findIndex((a) => a.slug === slug);
-  
-  if (index === -1) return null;
-
-  const updatedArticle = {
-    ...articles[index],
-    ...updates,
-    updatedAt: new Date().toISOString(),
-  } as Article;
-
-  articles[index] = updatedArticle;
-  return updatedArticle;
+// Deprecated or unused in file-system mode, but kept for compatibility if needed
+export async function getArticleById(id: string): Promise<Article | null> {
+  return getArticleBySlug(id);
 }
+

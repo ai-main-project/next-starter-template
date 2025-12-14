@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { Article } from '@/lib/articles';
 import styles from './ArticleDetail.module.css';
 import { Button } from '@/components/core/Button';
+import BlogStats from '@/components/BlogStats';
+import Comments from '@/components/Comments';
 import 'highlight.js/styles/github-dark.css';
 
 interface ArticleDetailProps {
@@ -44,6 +46,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({ article }) => {
                             <span key={tag} className={styles.tag}>#{tag}</span>
                         ))}
                     </div>
+                    <BlogStats slug={article.slug} />
                 </div>
             </header>
             <div className={styles.content}>
@@ -57,6 +60,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({ article }) => {
                     {article.content}
                 </ReactMarkdown>
             </div>
+            <Comments slug={article.slug} />
         </article>
     );
 };

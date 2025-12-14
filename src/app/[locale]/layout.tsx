@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import TrpcProvider from '@/lib/trpc/Provider';
-import { ClerkProvider } from '@clerk/nextjs';
 import { Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import "../globals.css";
-import { zhCN } from "@clerk/localizations";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/core/ThemeProvider";
@@ -38,22 +36,20 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <ClerkProvider localization={zhCN}>
-            <html lang={locale} suppressHydrationWarning>
-                <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                    <NextIntlClientProvider messages={messages}>
-                        <TrpcProvider>
-                            <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
-                                <Navbar />
-                                <main style={{ minHeight: '100vh', paddingTop: 'var(--header-height)' }}>
-                                    {children}
-                                </main>
-                                <Footer />
-                            </ThemeProvider>
-                        </TrpcProvider>
-                    </NextIntlClientProvider>
-                </body>
-            </html>
-        </ClerkProvider>
+        <html lang={locale} suppressHydrationWarning>
+            <body className={`${geistSans.variable} ${geistMono.variable}`}>
+                <NextIntlClientProvider messages={messages}>
+                    <TrpcProvider>
+                        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+                            <Navbar />
+                            <main style={{ minHeight: '100vh', paddingTop: 'var(--header-height)' }}>
+                                {children}
+                            </main>
+                            <Footer />
+                        </ThemeProvider>
+                    </TrpcProvider>
+                </NextIntlClientProvider>
+            </body>
+        </html>
     );
 }
