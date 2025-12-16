@@ -9,33 +9,13 @@ import { Badge } from '@/components/core/Badge';
 import { Button } from '@/components/core/Button';
 import { Article } from '@/lib/articles';
 
-export const FeaturedPosts = () => {
+interface FeaturedPostsProps {
+    posts: Article[];
+}
+
+export const FeaturedPosts = ({ posts }: FeaturedPostsProps) => {
     const t = useTranslations('Common');
     const locale = useLocale();
-    const [posts, setPosts] = useState<Article[]>([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const res = await fetch('/api/articles');
-                if (res.ok) {
-                    const data = await res.json() as any;
-                    setPosts(data.slice(0, 3)); // Only show top 3
-                }
-            } catch (error) {
-                console.error('Failed to fetch posts', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchPosts();
-    }, []);
-
-    if (loading) {
-        return null; // Or a loading skeleton
-    }
 
     if (posts.length === 0) {
         return null;
