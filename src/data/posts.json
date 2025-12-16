@@ -1,0 +1,29 @@
+[
+  {
+    "id": "welcome",
+    "slug": "welcome",
+    "content": "\n# Hello World\n\nThis is my first post using **local Markdown files**.\n\n## Features\n\n- Written in Markdown\n- Stored in `posts/` directory\n- Deployed via GitHub\n- Dynamic stats via Cloudflare D1\n\n```javascript\nconsole.log(\"Hello from Markdown!\");\n```\n",
+    "title": "Welcome to My New Blog",
+    "excerpt": "This is a sample post written in Markdown and stored locally.",
+    "tags": [
+      "Next.js",
+      "Markdown",
+      "Cloudflare"
+    ],
+    "coverImage": "https://images.unsplash.com/photo-1499750310159-5b5f226932b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "createdAt": "2025-12-14",
+    "updatedAt": "2025-12-14"
+  },
+  {
+    "id": "test-post",
+    "slug": "test-post",
+    "content": "\n# Test Post\n\nThis is a test post to verify:\n1. Content loading\n2. Views\n3. Likes\n4. Comments\n",
+    "title": "Self Test Post",
+    "excerpt": "Testing the blog functionality.",
+    "tags": [
+      "Test"
+    ],
+    "createdAt": "2025-12-14",
+    "updatedAt": "2025-12-14"
+  }
+]

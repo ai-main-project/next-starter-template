@@ -1,6 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import postsData from '@/data/posts.json';
 
 export interface Article {
   id: string;
@@ -14,69 +12,17 @@ export interface Article {
   updatedAt: string;
 }
 
-const postsDirectory = path.join(process.cwd(), 'posts');
+// Cast the imported data to Article[] to ensure type safety
+// We use 'as unknown as Article[]' because JSON import types can be inferred loosely
+const articles: Article[] = postsData as unknown as Article[];
 
 export async function getArticles(): Promise<Article[]> {
-  if (!fs.existsSync(postsDirectory)) {
-    return [];
-  }
-
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allArticlesData = fileNames
-    .filter((fileName) => fileName.endsWith('.md'))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, '');
-      const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContents);
-
-      return {
-        id: slug,
-        slug,
-        content,
-        title: data.title || 'Untitled',
-        excerpt: data.excerpt || '',
-        tags: data.tags || [],
-        coverImage: data.coverImage,
-        createdAt: data.date || new Date().toISOString(),
-        updatedAt: data.date || new Date().toISOString(),
-      } as Article;
-    });
-
-  // Sort posts by date
-  return allArticlesData.sort((a, b) => {
-    if (a.createdAt < b.createdAt) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  return articles;
 }
 
 export async function getArticleBySlug(slug: string): Promise<Article | null> {
-  try {
-    const fullPath = path.join(postsDirectory, `${slug}.md`);
-    if (!fs.existsSync(fullPath)) {
-      return null;
-    }
-
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data, content } = matter(fileContents);
-
-    return {
-      id: slug,
-      slug,
-      content,
-      title: data.title || 'Untitled',
-      excerpt: data.excerpt || '',
-      tags: data.tags || [],
-      coverImage: data.coverImage,
-      createdAt: data.date || new Date().toISOString(),
-      updatedAt: data.date || new Date().toISOString(),
-    } as Article;
-  } catch (error) {
-    return null;
-  }
+  const article = articles.find((post) => post.slug === slug);
+  return article || null;
 }
 
 // Deprecated or unused in file-system mode, but kept for compatibility if needed
