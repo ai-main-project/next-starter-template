@@ -41,6 +41,24 @@ export default async function RootLayout({
 
     return (
         <html lang={locale} suppressHydrationWarning>
+            <head>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+              if (typeof window !== 'undefined' && !window.__name) {
+                Object.defineProperty(window, '__name', {
+                  writable: true,
+                  enumerable: false,
+                  configurable: true,
+                  value: function(func) {
+                    return (func && func.displayName) || (func && func.name) || '';
+                  }
+                });
+              }
+            `,
+                    }}
+                />
+            </head>
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
                 <NextIntlClientProvider messages={messages}>
                     <TrpcProvider>

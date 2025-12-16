@@ -5,6 +5,13 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'standalone' as const,
+    experimental: {
+        outputFileTracingIncludes: {
+            '/blog': ['./posts/**/*'],
+            '/zh/blog': ['./posts/**/*'],
+            '/en/blog': ['./posts/**/*'],
+        },
+    } as any,
 };
 
 export default withNextIntl(nextConfig);
