@@ -25,6 +25,10 @@ export const metadata: Metadata = {
 
 const inter = Inter({ subsets: ['latin'] });
 
+export function generateStaticParams() {
+    return [{ locale: 'en' }, { locale: 'zh' }];
+}
+
 export default async function RootLayout({
     children,
     params
