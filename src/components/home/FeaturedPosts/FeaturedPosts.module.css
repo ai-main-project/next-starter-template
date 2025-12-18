@@ -26,32 +26,20 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
-    max-width: 100%;
+    width: 100%;
 }
 
-/* Limit to max 3 columns and prevent single items from being too wide */
-@media (min-width: 769px) {
+@media (min-width: 640px) {
     .grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
-        justify-content: start;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 1024px) {
     .grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        max-width: 1200px;
-    }
-
-    /* When there's only 1-2 posts, limit their width */
-    .grid:has(:only-child) {
-        grid-template-columns: minmax(300px, 400px);
-    }
-
-    .grid:has(:nth-child(2):last-child) {
-        grid-template-columns: repeat(2, minmax(300px, 400px));
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
