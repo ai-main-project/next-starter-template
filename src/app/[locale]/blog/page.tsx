@@ -1,11 +1,9 @@
 import { getArticles } from '@/lib/articles';
 import { ArticleList } from '@/components/blog/ArticleList';
 
-export const dynamic = 'force-static';
 
-export function generateStaticParams() {
-    return [{ locale: 'en' }, { locale: 'zh' }];
-}
+
+
 
 export default async function BlogPage() {
     const articles = await getArticles();

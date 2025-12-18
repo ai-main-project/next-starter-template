@@ -17,3 +17,16 @@ CREATE TABLE comments (
   content TEXT NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+DROP TABLE IF EXISTS articles;
+CREATE TABLE articles (
+  id TEXT PRIMARY KEY,
+  slug TEXT UNIQUE NOT NULL,
+  title TEXT NOT NULL,
+  content TEXT NOT NULL,
+  excerpt TEXT,
+  tags TEXT, -- JSON string or comma separated
+  cover_image TEXT,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,13 +1,13 @@
-import { getArticleBySlug, getArticles } from '@/lib/articles';
+import { getArticleBySlug } from '@/lib/articles';
 import { ArticleDetail } from '@/components/blog/ArticleDetail';
 import { notFound } from 'next/navigation';
 
-export async function generateStaticParams() {
-    const articles = await getArticles();
-    return articles.map((article) => ({
-        slug: article.slug,
-    }));
-}
+// export async function generateStaticParams() {
+//     const articles = await getArticles();
+//     return articles.map((article) => ({
+//         slug: article.slug,
+//     }));
+// }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
