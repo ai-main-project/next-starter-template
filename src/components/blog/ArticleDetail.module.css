@@ -1,12 +1,247 @@
+/* Main Container */
 .article {
-    max-width: 800px;
+    width: 100%;
     margin: 0 auto;
+    position: relative;
+}
+
+/* Hero Section */
+.heroSection {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 4rem 8rem;
+    overflow: hidden;
+    background: radial-gradient(circle at top center, rgba(124, 58, 237, 0.05) 0%, transparent 70%);
+}
+
+.heroBackground {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: transform 0.7s ease;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), var(--bg-app));
+    backdrop-filter: blur(1px);
+}
+
+[data-theme='dark'] .heroOverlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), var(--bg-app));
+}
+
+.heroContent {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    animation: fadeUp 0.8s ease-out;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.tag {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
     background: var(--bg-panel);
     border: 1px solid var(--border-glass);
-    border-radius: var(--radius-xl);
-    padding: 3rem;
-    backdrop-filter: blur(var(--blur-glass));
-    box-shadow: var(--shadow-glass);
+    color: var(--primary);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+    border-color: var(--primary);
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--text-main) 0%, var(--text-muted) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.metaItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Content Container */
+.contentContainer {
+    max-width: 768px;
+    margin: -4rem auto 0;
+    position: relative;
+    z-index: 20;
+    padding: 0 1.5rem;
+}
+
+.card {
+    background: var(--bg-panel-hover);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    padding: 3rem 4rem;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(20px);
+}
+
+/* Back Button */
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.backLink:hover {
+    color: var(--primary);
+}
+
+/* Statistics Bar */
+.statsContainer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-glass);
+    display: flex;
+    justify-content: center;
+}
+
+/* Typography Overrides */
+.prose {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-main);
+}
+
+/* Hide first H1 in visual content if redundant */
+.prose h1:first-child {
+    display: none;
+}
+
+.prose p {
+    margin-bottom: 1.75em;
+    color: var(--text-main);
+    opacity: 0.9;
+}
+
+.prose h2 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.prose h3 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    color: var(--text-main);
+}
+
+.prose video,
+.prose img {
+    border-radius: 16px;
+    margin: 2.5rem 0;
+    box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--border-glass);
+}
+
+.prose code {
+    background: rgba(124, 58, 237, 0.08);
+    /* slight purple tint */
+    color: var(--primary);
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.prose pre {
+    background: #0F1117 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.25rem;
+    }
+
+    .heroSection {
+        padding: 4rem 1.5rem 6rem;
+    }
+
+    .contentContainer {
+        margin-top: -2rem;
+        padding: 0 1rem;
+    }
+
+    .card {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .actions {

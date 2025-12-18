@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ 
       success: true, 
-      id: slug, // Return slug as ID for redirection
+      id: id, // Return UUID for redirection
       message: 'Article created successfully' 
     });
 

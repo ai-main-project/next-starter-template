@@ -51,8 +51,8 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     }
 
     const article = await env.DB.prepare(
-      'SELECT * FROM articles WHERE slug = ?'
-    ).bind(slug).first();
+      'SELECT * FROM articles WHERE slug = ? OR id = ?'
+    ).bind(slug, slug).first();
 
     if (!article) return null;
 
