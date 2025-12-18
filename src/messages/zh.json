@@ -52,7 +52,21 @@
       "tags": "技术, 生活, 编程 (逗号分隔)",
       "content": "# 你好，世界"
     },
-    "backToBlog": "返回博客列表"
+    "backToBlog": "返回博客列表",
+    "published": "发布于",
+    "readTime": "阅读时间",
+    "minRead": "分钟阅读",
+    "comments": {
+      "title": "评论",
+      "leaveThought": "发表看法",
+      "placeholder": "写下您的想法...",
+      "post": "发表评论",
+      "posting": "发表中...",
+      "loading": "加载评论中...",
+      "emptyTitle": "暂无评论",
+      "emptyDesc": "快来发表第一条评论吧！",
+      "anonymous": "匿名用户"
+    }
   },
   "Resume": {
     "experience": "工作经历",

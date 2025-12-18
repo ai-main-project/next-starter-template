@@ -60,7 +60,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({ article }) => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                             <time dateTime={article.createdAt}>
-                                {new Date(article.createdAt).toLocaleDateString(locale, {
+                                {t('published')} {new Date(article.createdAt).toLocaleDateString(locale, {
                                     year: 'numeric',
                                     month: 'long',
                                     day: 'numeric'
@@ -72,7 +72,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({ article }) => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span>
-                                {article.excerpt.length > 100 ? '5 min read' : '3 min read'}
+                                {t('readTime')}: {article.excerpt.length > 100 ? `5 ${t('minRead')}` : `3 ${t('minRead')}`}
                             </span>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import styles from './Comments.module.css';
 
 interface Comment {
@@ -12,6 +13,7 @@ interface CommentsProps {
 }
 
 export default function Comments({ slug }: CommentsProps) {
+    const t = useTranslations('Blog.comments');
     const [comments, setComments] = useState<Comment[]>([]);
     const [newComment, setNewComment] = useState('');
     const [loading, setLoading] = useState(true);
@@ -56,7 +58,7 @@ export default function Comments({ slug }: CommentsProps) {
         <div className={styles.container}>
             <div className={styles.header}>
                 <h3 className={styles.title}>
-                    Comments
+                    {t('title')}
                     <span className={styles.count}>
                         {comments.length}
                     </span>
@@ -66,13 +68,13 @@ export default function Comments({ slug }: CommentsProps) {
             <form onSubmit={handleSubmit} className={styles.formCard}>
                 <div className="mb-4">
                     <label htmlFor="comment" className={styles.label}>
-                        Leave a thought
+                        {t('leaveThought')}
                     </label>
                     <textarea
                         id="comment"
                         value={newComment}
                         onChange={(e) => setNewComment(e.target.value)}
-                        placeholder="What are your thoughts?"
+                        placeholder={t('placeholder')}
                         className={styles.textarea}
                         required
                     />
@@ -83,18 +85,18 @@ export default function Comments({ slug }: CommentsProps) {
                         disabled={submitting || !newComment.trim()}
                         className={styles.submitButton}
                     >
-                        {submitting ? 'Posting...' : 'Post Comment'}
+                        {submitting ? t('posting') : t('post')}
                     </button>
                 </div>
             </form>
 
             <div className="space-y-8">
                 {loading ? (
-                    <div className="text-center py-8 text-gray-500">Loading comments...</div>
+                    <div className="text-center py-8 text-gray-500">{t('loading')}</div>
                 ) : comments.length === 0 ? (
                     <div className={styles.emptyState}>
-                        <p className="text-lg mb-2 font-medium">No comments yet</p>
-                        <p className="opacity-70">Be the first to share your thoughts!</p>
+                        <p className="text-lg mb-2 font-medium">{t('emptyTitle')}</p>
+                        <p className="opacity-70">{t('emptyDesc')}</p>
                     </div>
                 ) : (
                     comments.map((comment) => (
@@ -104,7 +106,7 @@ export default function Comments({ slug }: CommentsProps) {
                             </div>
                             <div className={styles.commentContent}>
                                 <div className={styles.commentHeader}>
-                                    <span className={styles.author}>Anonymous</span>
+                                    <span className={styles.author}>{t('anonymous')}</span>
                                     <span className={styles.date}>
                                         {new Date(comment.created_at).toLocaleDateString(undefined, {
                                             year: 'numeric',

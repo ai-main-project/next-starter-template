@@ -52,7 +52,21 @@
       "tags": "tech, life, coding (comma separated)",
       "content": "# Hello World"
     },
-    "backToBlog": "Back to Blog"
+    "backToBlog": "Back to Blog",
+    "published": "Published",
+    "readTime": "Read time",
+    "minRead": "min read",
+    "comments": {
+      "title": "Comments",
+      "leaveThought": "Leave a thought",
+      "placeholder": "What are your thoughts?",
+      "post": "Post Comment",
+      "posting": "Posting...",
+      "loading": "Loading comments...",
+      "emptyTitle": "No comments yet",
+      "emptyDesc": "Be the first to share your thoughts!",
+      "anonymous": "Anonymous"
+    }
   },
   "Resume": {
     "experience": "Experience",
