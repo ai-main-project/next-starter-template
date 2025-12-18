@@ -23,10 +23,10 @@ export async function POST(request: NextRequest) {
     const tagsString = Array.isArray(tags) ? tags.join(',') : tags;
 
     await env.DB.prepare(
-      `INSERT INTO articles (id, slug, title, content, excerpt, tags, created_at, updated_at) 
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
+      `INSERT INTO articles (id, slug, title, content, excerpt, tags, cover_image, created_at, updated_at) 
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
     )
-      .bind(id, slug, title, content, excerpt || '', tagsString || '', now, now)
+      .bind(id, slug, title, content, excerpt || '', tagsString || '', (body as any).cover_image || null, now, now)
       .run();
 
     return NextResponse.json({ 
