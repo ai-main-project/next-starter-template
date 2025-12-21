@@ -17,7 +17,7 @@
     text-align: center;
     padding: 6rem 4rem 8rem;
     overflow: hidden;
-    background: radial-gradient(circle at top center, rgba(124, 58, 237, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle at top center, rgba(var(--color-primary-rgb), 0.05) 0%, transparent 70%);
 }
 
 .heroBackground {
@@ -75,7 +75,7 @@
 
 .tag:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+    box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.2);
     border-color: var(--primary);
 }
 
@@ -193,7 +193,7 @@
 }
 
 .prose code {
-    background: rgba(124, 58, 237, 0.08);
+    background: rgba(var(--color-primary-rgb), 0.08);
     /* slight purple tint */
     color: var(--primary);
     padding: 0.2em 0.4em;
@@ -299,7 +299,7 @@
 
 .tag {
     color: var(--primary);
-    background: rgba(124, 58, 237, 0.08);
+    background: rgba(var(--color-primary-rgb), 0.08);
     padding: 0.2rem 0.6rem;
     border-radius: var(--radius-full);
     font-size: 0.8rem;
@@ -308,7 +308,7 @@
 }
 
 .tag:hover {
-    background: rgba(124, 58, 237, 0.15);
+    background: rgba(var(--color-primary-rgb), 0.15);
 }
 
 .content {
@@ -361,7 +361,7 @@
 }
 
 .content code {
-    background: rgba(124, 58, 237, 0.1);
+    background: rgba(var(--color-primary-rgb), 0.1);
     color: var(--primary);
     padding: 0.2rem 0.4rem;
     border-radius: 6px;
@@ -387,7 +387,7 @@
 
 .content blockquote {
     border-left: 4px solid var(--primary);
-    background: rgba(124, 58, 237, 0.05);
+    background: rgba(var(--color-primary-rgb), 0.05);
     padding: 1.5rem;
     margin: 2rem 0;
     border-radius: 0 var(--radius-md) var(--radius-md) 0;

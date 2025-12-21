@@ -14,7 +14,7 @@ export default async function BlogPage() {
                 fontSize: '3rem',
                 marginBottom: '3rem',
                 textAlign: 'center',
-                background: 'linear-gradient(to right, #c084fc, #6366f1)',
+                background: 'linear-gradient(to right, var(--color-primary), var(--color-accent))',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 fontWeight: 'bold'

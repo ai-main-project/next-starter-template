@@ -28,7 +28,7 @@ export default function QRCodePage() {
                 <h1 style={{
                     fontSize: '2rem',
                     marginBottom: '2rem',
-                    background: 'linear-gradient(to right, #c084fc, #6366f1)',
+                    background: 'linear-gradient(to right, var(--color-primary), var(--color-accent))',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     fontWeight: 'bold',

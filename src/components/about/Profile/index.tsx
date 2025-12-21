@@ -10,7 +10,11 @@ export const Profile = () => {
 
     return (
         <Card className={styles.profile}>
-            <div className={styles.avatar} />
+            <img
+                src="https://assets.vistwang.com/header.jpg"
+                alt="Vist's Avatar"
+                className={styles.avatar}
+            />
             <h1 className={styles.name}>Vist</h1>
             <p className={styles.bio}>{t('bio')}</p>
         </Card>

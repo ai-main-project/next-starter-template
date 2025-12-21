@@ -3,63 +3,92 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-:root {
-  /* Light Mode (Default) */
-  --bg-app: #ffffff;
-  --bg-panel: rgba(255, 255, 255, 0.7);
-  --bg-panel-hover: rgba(255, 255, 255, 0.9);
-
-  --border-glass: rgba(0, 0, 0, 0.08);
-  --border-glass-strong: rgba(0, 0, 0, 0.15);
-
-  --text-main: #18181b;
-  --text-muted: #71717a;
-  --text-dim: #a1a1aa;
-
-  --primary: #7c3aed;
-  --secondary: #0891b2;
-
-  /* Effects */
-  --blur-glass: 12px;
-  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
-  --glow-primary: conic-gradient(from 180deg at 50% 50%, #3b82f6 0deg, #8b5cf6 180deg, #ec4899 360deg);
-
-  /* Layout */
-  --max-width: 1200px;
-  --header-height: 80px;
+@theme {
+  /* Common variables */
+  --font-sans: "Outfit", system-ui, -apple-system, sans-serif;
   --radius-xl: 24px;
   --radius-lg: 16px;
   --radius-md: 12px;
   --radius-full: 9999px;
+  --max-width: 1200px;
+  --header-height: 80px;
+  --blur-glass: 12px;
+
+  /* Theme color tokens - registering them for Tailwind use */
+  --color-primary: #fcd535;
+  --color-primary-foreground: #1a1a1a;
+  --color-background: #fafafa;
+  --color-foreground: #1a1a1a;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+  --color-accent: #f59e0b;
+  --color-accent-foreground: #ffffff;
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #6b7280;
+  --color-border: #e5e5e5;
 }
 
-[data-theme='dark'] {
-  /* Dark Mode */
-  --bg-app: #0a0a0a;
-  --bg-panel: rgba(255, 255, 255, 0.03);
-  --bg-panel-hover: rgba(255, 255, 255, 0.06);
+/* Light Theme Variables & Aliases */
+:root {
+  --color-background: #fafafa;
+  --color-foreground: #1a1a1a;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+  --color-accent: #f59e0b;
+  --color-accent-foreground: #ffffff;
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #6b7280;
+  --color-border: #e5e5e5;
+  --color-primary-rgb: 252, 213, 53;
+  --color-accent-rgb: 245, 158, 11;
 
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --border-glass-strong: rgba(255, 255, 255, 0.15);
+  /* Legacy variable mapping for compatibility */
+  --bg-app: var(--color-background);
+  --bg-panel: var(--color-card);
+  --bg-panel-hover: var(--color-muted);
+  --border-glass: var(--color-border);
+  --border-glass-strong: color-mix(in srgb, var(--color-border), #000 10%);
+  --text-main: var(--color-foreground);
+  --text-muted: var(--color-muted-foreground);
+  --text-dim: color-mix(in srgb, var(--color-muted-foreground), transparent 30%);
+  --primary: var(--color-primary);
+  --secondary: var(--color-accent);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  --glow-primary: radial-gradient(circle at 50% 50%, var(--color-primary) 0%, transparent 70%);
+  --snowflake-color: #cbd5e1;
+}
 
-  --text-main: #ededed;
-  --text-muted: #a1a1aa;
-  --text-dim: #52525b;
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --color-background: #0a0a0a;
+  --color-foreground: #ededed;
+  --color-card: #141414;
+  --color-card-foreground: #ededed;
+  --color-accent: #fbbf24;
+  --color-accent-foreground: #1a1a1a;
+  --color-muted: #1f1f1f;
+  --color-muted-foreground: #a1a1aa;
+  --color-border: #2e2e2e;
+  --color-primary-rgb: 252, 213, 53;
+  --color-accent-rgb: 251, 191, 36;
 
-  --primary: #8b5cf6;
-  --secondary: #06b6d4;
-
+  /* Legacy mapping for Dark Mode */
+  --bg-app: var(--color-background);
+  --bg-panel: var(--color-card);
+  --bg-panel-hover: var(--color-muted);
+  --border-glass: var(--color-border);
+  --border-glass-strong: color-mix(in srgb, var(--color-border), #fff 10%);
+  --text-main: var(--color-foreground);
+  --text-muted: var(--color-muted-foreground);
+  --text-dim: color-mix(in srgb, var(--color-muted-foreground), transparent 30%);
+  --primary: var(--color-primary);
+  --secondary: var(--color-accent);
   --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
-  --glow-primary: conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 360deg);
+  --glow-primary: radial-gradient(circle at 50% 50%, var(--color-primary) 0%, transparent 70%);
   --snowflake-color: #ffffff;
 }
 
-.christmas-theme {
-  --primary: #d42426;
-  /* Festive Red */
-  --secondary: #2e7d32;
-  /* Pine Green */
-}
+
 
 :root:not([data-theme='dark']) .christmas-theme {
   --snowflake-color: #cbd5e1;
@@ -106,7 +135,7 @@ a {
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #c084fc, #6366f1);
+  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
