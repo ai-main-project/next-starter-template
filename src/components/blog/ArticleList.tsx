@@ -27,6 +27,13 @@ export const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
                                     <span key={tag} className={styles.tag}>#{tag}</span>
                                 ))}
                             </div>
+                            <div className={styles.views} style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.875rem', color: 'var(--text-muted)', marginLeft: 'auto' }}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                <span>{article.views?.toLocaleString() || 0}</span>
+                            </div>
                         </div>
                     </Link>
                 </article>

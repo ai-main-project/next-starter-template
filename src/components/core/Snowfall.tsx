@@ -3,12 +3,12 @@
 import React from 'react';
 
 const Snowfall = () => {
-    return (
-        <div className="snowfall-container" aria-hidden="true">
-            {[...Array(20)].map((_, i) => (
-                <div key={i} className="snowflake" />
-            ))}
-            <style jsx>{`
+  return (
+    <div className="snowfall-container" aria-hidden="true">
+      {[...Array(20)].map((_, i) => (
+        <div key={i} className="snowflake" />
+      ))}
+      <style jsx>{`
         .snowfall-container {
           position: fixed;
           top: 0;
@@ -25,7 +25,7 @@ const Snowfall = () => {
           top: -10px;
           width: 8px;
           height: 8px;
-          background: white;
+          background: var(--snowflake-color);
           border-radius: 50%;
           opacity: 0.8;
           filter: blur(1px);
@@ -90,8 +90,8 @@ const Snowfall = () => {
         .snowflake:nth-child(19) { left: 95%; animation-duration: 8.6s; animation-delay: 0.2s; }
         .snowflake:nth-child(20) { left: 98%; animation-duration: 6.2s; animation-delay: 3.2s; }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Snowfall;

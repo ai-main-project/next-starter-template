@@ -8,6 +8,7 @@ export interface Article {
   excerpt: string;
   tags: string[];
   coverImage?: string;
+  views?: number;
   createdAt: string;
   updatedAt: string;
 }
@@ -22,7 +23,10 @@ export async function getArticles(): Promise<Article[]> {
     }
 
     const { results } = await env.DB.prepare(
-      'SELECT * FROM articles ORDER BY created_at DESC'
+      `SELECT a.*, COALESCE(v.views, 0) as views 
+       FROM articles a 
+       LEFT JOIN post_views v ON a.slug = v.slug 
+       ORDER BY a.created_at DESC`
     ).run();
 
     return results.map((row: any) => ({
@@ -33,6 +37,7 @@ export async function getArticles(): Promise<Article[]> {
       excerpt: row.excerpt,
       tags: row.tags ? row.tags.split(',') : [],
       coverImage: row.cover_image,
+      views: row.views,
       createdAt: row.created_at,
       updatedAt: row.updated_at,
     }));
@@ -51,7 +56,10 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     }
 
     const article = await env.DB.prepare(
-      'SELECT * FROM articles WHERE slug = ? OR id = ?'
+      `SELECT a.*, COALESCE(v.views, 0) as views 
+       FROM articles a 
+       LEFT JOIN post_views v ON a.slug = v.slug 
+       WHERE a.slug = ? OR a.id = ?`
     ).bind(slug, slug).first();
 
     if (!article) return null;
@@ -65,6 +73,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
       excerpt: row.excerpt,
       tags: row.tags ? row.tags.split(',') : [],
       coverImage: row.cover_image,
+      views: row.views,
       createdAt: row.created_at,
       updatedAt: row.updated_at,
     };
