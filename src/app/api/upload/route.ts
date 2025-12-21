@@ -7,7 +7,7 @@ const R2_SECRET_ACCESS_KEY = 'b858d579b5840e0aeebdd6ae8547cb542ed845ffe843884438
 const R2_BUCKET_NAME = 'vist-blog';
 // Ideally this should be an environment variable or a custom domain
 // For now, we'll assume a public bucket url pattern or ask user to configure
-const PUBLIC_URL_BASE = 'https://vistwang.com'; 
+const PUBLIC_URL_BASE = 'https://assets.vistwang.com'; 
 
 const S3 = new S3Client({
   region: 'auto',
