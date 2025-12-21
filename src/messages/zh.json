@@ -15,9 +15,53 @@
     "rights": "保留所有权利。",
     "tools": "工具",
     "qrCodeTool": "二维码生成器",
-    "qrCodeDesc": "即时生成用于 URL 或文本的高质量二维码。",
-    "enterUrl": "输入 URL 或文本",
-    "download": "下载二维码"
+    "qrCodeDesc": "即时生成高质量的网址或文本二维码。",
+    "enterUrl": "输入网址或文本",
+    "download": "下载 PNG",
+    "downloadSvg": "下载 SVG",
+    "copyImage": "复制到剪贴板",
+    "copied": "已复制！",
+    "tabs": {
+      "text": "网址/文本",
+      "wifi": "WiFi",
+      "vcard": "电子名片",
+      "sms": "短信/邮件"
+    },
+    "wifi": {
+      "ssid": "WiFi 名称 (SSID)",
+      "password": "密码",
+      "encryption": "加密方式",
+      "none": "无",
+      "hidden": "隐藏网络"
+    },
+    "vcard": {
+      "firstName": "名字",
+      "lastName": "姓氏",
+      "mobile": "手机号码",
+      "email": "电子邮箱",
+      "company": "公司",
+      "job": "职位",
+      "url": "网站"
+    },
+    "sms": {
+      "phone": "电话号码",
+      "message": "短信内容",
+      "subject": "邮件主题",
+      "body": "邮件正文"
+    },
+    "customization": {
+      "title": "外观自定义",
+      "fgColor": "二维码颜色",
+      "bgColor": "背景颜色",
+      "logo": "上传 Logo",
+      "logoDesc": "中间图标",
+      "size": "尺寸",
+      "ecc": "容错率",
+      "low": "低 (7%)",
+      "medium": "中 (15%)",
+      "quartile": "较高 (25%)",
+      "high": "高 (30%)"
+    }
   },
   "Hero": {
     "title1": "设计. 代码.",

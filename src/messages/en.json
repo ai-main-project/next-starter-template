@@ -17,7 +17,51 @@
     "qrCodeTool": "QR Code Generator",
     "qrCodeDesc": "Generate high-quality QR codes for URLs or text instantly.",
     "enterUrl": "Enter URL or text",
-    "download": "Download QR Code"
+    "download": "Download PNG",
+    "downloadSvg": "Download SVG",
+    "copyImage": "Copy to Clipboard",
+    "copied": "Copied!",
+    "tabs": {
+      "text": "URL/Text",
+      "wifi": "WiFi",
+      "vcard": "vCard",
+      "sms": "SMS/Email"
+    },
+    "wifi": {
+      "ssid": "WiFi Name (SSID)",
+      "password": "Password",
+      "encryption": "Encryption",
+      "none": "None",
+      "hidden": "Hidden Network"
+    },
+    "vcard": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "mobile": "Mobile",
+      "email": "Email",
+      "company": "Company",
+      "job": "Job Title",
+      "url": "Website"
+    },
+    "sms": {
+      "phone": "Phone Number",
+      "message": "Message",
+      "subject": "Subject",
+      "body": "Body"
+    },
+    "customization": {
+      "title": "Customization",
+      "fgColor": "QR Color",
+      "bgColor": "Background",
+      "logo": "Upload Logo",
+      "logoDesc": "Center icon",
+      "size": "Size",
+      "ecc": "Error Correction",
+      "low": "Low (7%)",
+      "medium": "Medium (15%)",
+      "quartile": "Quartile (25%)",
+      "high": "High (30%)"
+    }
   },
   "Hero": {
     "title1": "Design. Code.",
