@@ -56,7 +56,7 @@ export default function QRCodePage() {
     // Customization state
     const [fgColor, setFgColor] = useState('#000000');
     const [bgColor, setBgColor] = useState('#ffffff');
-    const [size, setSize] = useState(256);
+    const [size, setSize] = useState(300);
     const [level, setLevel] = useState<ECCLevel>('H');
     const [logo, setLogo] = useState<string | null>(null);
     const [copyStatus, setCopyStatus] = useState(false);
@@ -171,13 +171,13 @@ export default function QRCodePage() {
             <p style={{ textAlign: 'center', color: 'var(--text-muted)', marginBottom: '2rem', fontSize: '0.9rem' }}>{t('qrCodeDesc')}</p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                {/* Header Actions: Tabs and Settings */}
+                {/* Header Actions: Tabs, Small Preview, and Settings */}
                 <div style={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     gap: '1rem',
-                    flexWrap: 'wrap-reverse'
+                    flexWrap: 'wrap'
                 }}>
                     <div style={{
                         display: 'flex',
@@ -187,7 +187,8 @@ export default function QRCodePage() {
                         borderRadius: 'var(--radius-lg)',
                         border: '1px solid var(--border-glass)',
                         overflowX: 'auto',
-                        maxWidth: '100%'
+                        maxWidth: 'calc(100% - 100px)',
+                        flex: 1
                     }}>
                         <TabButton id="text" label={t('tabs.text')} activeTab={activeTab} onSelect={setActiveTab} />
                         <TabButton id="wifi" label={t('tabs.wifi')} activeTab={activeTab} onSelect={setActiveTab} />
@@ -195,13 +196,35 @@ export default function QRCodePage() {
                         <TabButton id="sms" label={t('tabs.sms')} activeTab={activeTab} onSelect={setActiveTab} />
                     </div>
 
-                    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                        {/* Inline QR Preview for Desktop */}
+                        <div style={{
+                            width: '48px',
+                            height: '48px',
+                            background: bgColor,
+                            padding: '4px',
+                            borderRadius: '4px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            border: '1px solid var(--border-glass)',
+                            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                        }}>
+                            <QRCodeCanvas
+                                value={qrValue || 'https://vist.blog'}
+                                size={40}
+                                level="L"
+                                fgColor={fgColor}
+                                bgColor={bgColor}
+                            />
+                        </div>
+
                         <Button
                             variant="secondary"
                             onClick={() => setShowSettings(!showSettings)}
-                            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+                            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', whiteSpace: 'nowrap' }}
                         >
-                            <span style={{ fontSize: '1.2rem' }}>⚙️</span> {t('customization.title')}
+                            <span style={{ fontSize: '1.2rem' }}>⚙️</span> {t('customization.settings')}
                         </Button>
                     </div>
                 </div>
@@ -294,15 +317,15 @@ export default function QRCodePage() {
                                     <QRCodeCanvas
                                         id="qr-canvas"
                                         value={qrValue || 'https://vist.blog'}
-                                        size={Math.min(size, 200)}
+                                        size={Math.min(size, 300)}
                                         level={level}
                                         fgColor={fgColor}
                                         bgColor={bgColor}
                                         includeMargin={true}
                                         imageSettings={logo ? {
                                             src: logo,
-                                            height: Math.min(size, 200) * 0.2,
-                                            width: Math.min(size, 200) * 0.2,
+                                            height: Math.min(size, 300) * 0.2,
+                                            width: Math.min(size, 300) * 0.2,
                                             excavate: true,
                                         } : undefined}
                                     />
@@ -325,7 +348,7 @@ export default function QRCodePage() {
                                     </div>
                                 </div>
 
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', flex: 1, minWidth: '240px' }}>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', flex: 1, minWidth: '180px' }}>
                                     <Button onClick={downloadPNG} disabled={!qrValue} style={{ width: '100%' }}>
                                         {t('download')}
                                     </Button>

@@ -60,8 +60,10 @@
       "low": "Low (7%)",
       "medium": "Medium (15%)",
       "quartile": "Quartile (25%)",
-      "high": "High (30%)"
-    }
+      "high": "High (30%)",
+      "settings": "Function Settings"
+    },
+    "save": "Save"
   },
   "Hero": {
     "title1": "Design. Code.",
