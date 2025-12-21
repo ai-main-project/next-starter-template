@@ -28,6 +28,7 @@ export const Navbar = () => {
     const navItems = [
         { label: t('home'), href: '/' },
         { label: t('posts'), href: '/blog' },
+        { label: t('tools'), href: '/tools' },
         { label: t('about'), href: '/about' },
     ];
 

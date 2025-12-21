@@ -12,7 +12,12 @@
     "footerBrand": "探索代码、设计和 Web 开发的未来。",
     "navigation": "导航",
     "social": "社交",
-    "rights": "保留所有权利。"
+    "rights": "保留所有权利。",
+    "tools": "工具",
+    "qrCodeTool": "二维码生成器",
+    "qrCodeDesc": "即时生成用于 URL 或文本的高质量二维码。",
+    "enterUrl": "输入 URL 或文本",
+    "download": "下载二维码"
   },
   "Hero": {
     "title1": "设计. 代码.",

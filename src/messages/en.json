@@ -12,7 +12,12 @@
     "footerBrand": "Exploring code, design, and the future of web development.",
     "navigation": "Navigation",
     "social": "Social",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "tools": "Tools",
+    "qrCodeTool": "QR Code Generator",
+    "qrCodeDesc": "Generate high-quality QR codes for URLs or text instantly.",
+    "enterUrl": "Enter URL or text",
+    "download": "Download QR Code"
   },
   "Hero": {
     "title1": "Design. Code.",
