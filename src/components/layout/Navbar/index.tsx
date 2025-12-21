@@ -9,6 +9,8 @@ import { cn } from '@/lib/utils/cn';
 import { Button } from '@/components/core/Button';
 import { ThemeToggle } from '@/components/core/ThemeToggle';
 import { LanguageSwitcher } from '@/components/core/LanguageSwitcher';
+import { HOLIDAY_CONFIG } from '@/lib/config/holiday';
+import ChristmasHat from '@/components/core/ChristmasHat';
 
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -32,7 +34,8 @@ export const Navbar = () => {
     return (
         <nav className={cn(styles.navbar, scrolled && styles.scrolled)}>
             <div className={styles.container}>
-                <Link href="/" className={styles.logo}>
+                <Link href="/" className={styles.logo} style={{ position: 'relative' }}>
+                    {HOLIDAY_CONFIG.isChristmas && <ChristmasHat />}
                     Vist<span className="text-gradient">.Blog</span>
                 </Link>
 

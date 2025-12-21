@@ -8,6 +8,8 @@ import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/core/ThemeProvider";
+import { HOLIDAY_CONFIG } from "@/lib/config/holiday";
+import Snowfall from "@/components/core/Snowfall";
 
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
@@ -59,10 +61,11 @@ export default async function RootLayout({
                     }}
                 />
             </head>
-            <body className={`${geistSans.variable} ${geistMono.variable}`}>
+            <body className={`${geistSans.variable} ${geistMono.variable} ${HOLIDAY_CONFIG.isChristmas ? 'christmas-theme' : ''}`}>
                 <NextIntlClientProvider messages={messages}>
                     <TrpcProvider>
                         <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+                            {HOLIDAY_CONFIG.isChristmas && <Snowfall />}
                             <Navbar />
                             <main style={{ minHeight: '100vh', paddingTop: 'var(--header-height)' }}>
                                 {children}

@@ -53,6 +53,13 @@
   --glow-primary: conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 360deg);
 }
 
+.christmas-theme {
+  --primary: #d42426;
+  /* Festive Red */
+  --secondary: #2e7d32;
+  /* Pine Green */
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
