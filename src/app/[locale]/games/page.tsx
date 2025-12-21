@@ -17,6 +17,12 @@ export default function GamesPage() {
                         <p>A clone of the classic Chrome Dino game. Jump over obstacles and score points!</p>
                     </Card>
                 </Link>
+                <Link href="/games/keybeat" className={styles.link}>
+                    <Card hoverable className={styles.cardContent}>
+                        <h3>{t('keybeatTitle')}</h3>
+                        <p>{t('keybeatShort')}</p>
+                    </Card>
+                </Link>
             </div>
         </div>
     );

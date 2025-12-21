@@ -13,9 +13,12 @@
     "navigation": "导航",
     "social": "社交",
     "rights": "保留所有权利。",
-    "tools": "工具",
+    "tools": "工具箱",
+    "games": "游戏厅",
     "qrCodeTool": "二维码生成器",
     "qrCodeDesc": "即时生成高质量的网址或文本二维码。",
+    "keybeatTitle": "KeyBeat 音乐键盘",
+    "keybeatShort": "交互式音乐合成器键盘。",
     "enterUrl": "输入网址或文本",
     "download": "下载 PNG",
     "downloadSvg": "下载 SVG",
@@ -161,5 +164,22 @@
       "senior": "带领前端团队，使用 React 和 Next.js 构建可扩展的 Web 应用。架构核心设计系统，并将站点性能提升了 40%。",
       "developer": "开发主要产品仪表板的关键功能。与设计师紧密合作，实现像素级完美的 UI。"
     }
+  },
+  "Games": {
+    "title": "游戏",
+    "keybeatTitle": "KeyBeat 音乐键盘",
+    "keybeatDesc": "将你的键盘变成强大的合成器和打击乐器。体验代码、设计与声音的完美融合。",
+    "keybeatShort": "交互式音乐合成器键盘。",
+    "keybeatSubtitle": "你的键盘，你的节奏。",
+    "pressToStart": "点击开始",
+    "row1Key": "数字 0-9",
+    "row1Desc": "打击乐与噪声音色",
+    "row2Key": "Q-P 键",
+    "row2Desc": "高音装饰音色",
+    "row3Key": "A-L 键",
+    "row3Desc": "主旋律 (C4-B4)",
+    "row4Key": "Z-M / 空格",
+    "row4Desc": "贝斯与镲片",
+    "spaceKey": "空格键"
   }
 }

@@ -29,6 +29,7 @@ export const Navbar = () => {
         { label: t('home'), href: '/' },
         { label: t('posts'), href: '/blog' },
         { label: t('tools'), href: '/tools' },
+        { label: t('games'), href: '/games' },
         { label: t('about'), href: '/about' },
     ];
 

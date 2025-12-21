@@ -23,6 +23,7 @@ export default function ToolsPage() {
                 </svg>
             )
         }
+
     ];
 
     return (

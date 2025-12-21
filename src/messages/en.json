@@ -14,8 +14,11 @@
     "social": "Social",
     "rights": "All rights reserved.",
     "tools": "Tools",
+    "games": "Games",
     "qrCodeTool": "QR Code Generator",
     "qrCodeDesc": "Generate high-quality QR codes for URLs or text instantly.",
+    "keybeatTitle": "KeyBeat",
+    "keybeatShort": "Interactive music synthesizer keyboard.",
     "enterUrl": "Enter URL or text",
     "download": "Download PNG",
     "downloadSvg": "Download SVG",
@@ -161,5 +164,22 @@
       "senior": "Leading the frontend team, building scalable web applications using React and Next.js. Architected the core design system and improved site performance by 40%.",
       "developer": "Developed key features for the main product dashboard. Collaborated closely with designers to implement pixel-perfect UIs."
     }
+  },
+  "Games": {
+    "title": "Games",
+    "keybeatTitle": "KeyBeat",
+    "keybeatDesc": "Turn your keyboard into a powerful synthesizer and percussion kit. Experience the fusion of code, design, and sound.",
+    "keybeatShort": "Interactive music synthesizer keyboard.",
+    "keybeatSubtitle": "Your keyboard. Your rhythm.",
+    "pressToStart": "PRESS TO START",
+    "row1Key": "Numbers 0-9",
+    "row1Desc": "Percussion & Noise",
+    "row2Key": "Q-P",
+    "row2Desc": "High Ornamentals",
+    "row3Key": "A-L",
+    "row3Desc": "Main Melody (C4-B4)",
+    "row4Key": "Z-M / Space",
+    "row4Desc": "Bass & Crash",
+    "spaceKey": "SPACE"
   }
 }
