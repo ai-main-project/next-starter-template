@@ -172,6 +172,8 @@
     "keybeatShort": "Interactive music synthesizer keyboard.",
     "keybeatSubtitle": "Your keyboard. Your rhythm.",
     "pressToStart": "PRESS TO START",
+    "dinoTitle": "Dino Game",
+    "dinoShort": "A clone of the classic Chrome Dino game. Jump over obstacles and score points!",
     "row1Key": "Numbers 0-9",
     "row1Desc": "Percussion & Noise",
     "row2Key": "Q-P",
@@ -180,6 +182,13 @@
     "row3Desc": "Main Melody (C4-B4)",
     "row4Key": "Z-M / Space",
     "row4Desc": "Bass & Crash",
-    "spaceKey": "SPACE"
+    "spaceKey": "SPACE",
+    "Dino": {
+      "score": "Score",
+      "highScore": "High Score",
+      "start": "Press Space or Click to Start",
+      "gameOver": "Game Over! Press Space or Click to Restart",
+      "jump": "Press Space or Click to Jump"
+    }
   }
 }

@@ -83,7 +83,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({ article }) => {
             <div className={styles.contentContainer}>
                 <div className={styles.card}>
                     <div className="mb-8">
-                        <Link href="/blog" className={styles.backLink}>
+                        <Link href={`/${locale}/blog`} className={styles.backLink}>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M19 12H5M12 19l-7-7 7-7" />
                             </svg>

@@ -29,14 +29,14 @@ export const FeaturedPosts = ({ posts }: FeaturedPostsProps) => {
                         <h2>{t('latestArticles')}</h2>
                         <p>{t('latestSubtitle')}</p>
                     </div>
-                    <Link href="/blog">
+                    <Link href={`/${locale}/blog`}>
                         <Button variant="ghost">{t('viewAll')}</Button>
                     </Link>
                 </div>
 
                 <div className={styles.grid}>
                     {posts.map((post) => (
-                        <Link key={post.id} href={`/blog/${post.id}`}>
+                        <Link key={post.id} href={`/${locale}/blog/${post.id}`}>
                             <Card hoverable className={styles.postCard}>
                                 <div className={styles.imageWrapper}>
                                     {post.coverImage ? (

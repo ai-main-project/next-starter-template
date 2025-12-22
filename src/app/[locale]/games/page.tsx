@@ -1,23 +1,28 @@
 import React from 'react';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { Card } from '@/components/core/Card';
 import styles from './page.module.css';
 
-export default function GamesPage() {
-    const t = useTranslations('Games');
+interface Props {
+    params: Promise<{ locale: string }>;
+}
+
+export default async function GamesPage({ params }: Props) {
+    const { locale } = await params;
+    const t = await getTranslations('Games');
 
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>{t('title')}</h1>
             <div className={styles.grid}>
-                <Link href="/games/dino" className={styles.link}>
+                <Link href={`/${locale}/games/dino`} className={styles.link}>
                     <Card hoverable className={styles.cardContent}>
-                        <h3>Dino Game</h3>
-                        <p>A clone of the classic Chrome Dino game. Jump over obstacles and score points!</p>
+                        <h3>{t('dinoTitle')}</h3>
+                        <p>{t('dinoShort')}</p>
                     </Card>
                 </Link>
-                <Link href="/games/keybeat" className={styles.link}>
+                <Link href={`/${locale}/games/keybeat`} className={styles.link}>
                     <Card hoverable className={styles.cardContent}>
                         <h3>{t('keybeatTitle')}</h3>
                         <p>{t('keybeatShort')}</p>

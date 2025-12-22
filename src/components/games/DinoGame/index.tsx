@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './DinoGame.module.css';
+import { useTranslations } from 'next-intl';
 
 const DinoGame = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -9,6 +10,7 @@ const DinoGame = () => {
     const [score, setScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
     const [gameStarted, setGameStarted] = useState(false);
+    const t = useTranslations('Games.Dino');
 
     // Game constants
     const GRAVITY = 0.6;
@@ -167,8 +169,8 @@ const DinoGame = () => {
     return (
         <div className={styles.gameContainer}>
             <div className={styles.scoreBoard}>
-                <span>Score: {score}</span>
-                <span>High Score: {highScore}</span>
+                <span>{t('score')}: {score}</span>
+                <span>{t('highScore')}: {highScore}</span>
             </div>
             <canvas
                 ref={canvasRef}
@@ -179,10 +181,10 @@ const DinoGame = () => {
             ></canvas>
             <div className={styles.instructions}>
                 {!gameStarted
-                    ? 'Press Space or Click to Start'
+                    ? t('start')
                     : isGameOver
-                        ? 'Game Over! Press Space or Click to Restart'
-                        : 'Press Space or Click to Jump'}
+                        ? t('gameOver')
+                        : t('jump')}
             </div>
         </div>
     );

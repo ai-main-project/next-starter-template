@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import styles from './Navbar.module.css';
 import { cn } from '@/lib/utils/cn';
 import { Button } from '@/components/core/Button';
@@ -15,6 +15,7 @@ import ChristmasHat from '@/components/core/ChristmasHat';
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
+    const locale = useLocale();
     const t = useTranslations('Common');
 
     useEffect(() => {
@@ -26,17 +27,17 @@ export const Navbar = () => {
     }, []);
 
     const navItems = [
-        { label: t('home'), href: '/' },
-        { label: t('posts'), href: '/blog' },
-        { label: t('tools'), href: '/tools' },
-        { label: t('games'), href: '/games' },
-        { label: t('about'), href: '/about' },
+        { label: t('home'), href: `/${locale}` },
+        { label: t('posts'), href: `/${locale}/blog` },
+        { label: t('tools'), href: `/${locale}/tools` },
+        { label: t('games'), href: `/${locale}/games` },
+        { label: t('about'), href: `/${locale}/about` },
     ];
 
     return (
         <nav className={cn(styles.navbar, scrolled && styles.scrolled)}>
             <div className={styles.container}>
-                <Link href="/" className={styles.logo} style={{ position: 'relative' }}>
+                <Link href={`/${locale}`} className={styles.logo} style={{ position: 'relative' }}>
                     {HOLIDAY_CONFIG.isChristmas && <ChristmasHat />}
                     Vist<span className="text-gradient">.Blog</span>
                 </Link>

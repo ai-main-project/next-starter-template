@@ -1,12 +1,15 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import styles from './Hero.module.css';
 import { Button } from '@/components/core/Button';
 
 export const Hero = () => {
     const t = useTranslations('Hero');
     const tCommon = useTranslations('Common');
+    const locale = useLocale();
 
     return (
         <section className={styles.hero}>
@@ -23,10 +26,10 @@ export const Hero = () => {
                 </p>
 
                 <div className={styles.actions}>
-                    <Link href="/blog">
+                    <Link href={`/${locale}/blog`}>
                         <Button size="lg">{tCommon('readMore')}</Button>
                     </Link>
-                    <Link href="/about">
+                    <Link href={`/${locale}/about`}>
                         <Button variant="secondary" size="lg">{tCommon('aboutMe')}</Button>
                     </Link>
                 </div>

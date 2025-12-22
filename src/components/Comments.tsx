@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import styles from './Comments.module.css';
 
 interface Comment {
@@ -14,6 +14,7 @@ interface CommentsProps {
 
 export default function Comments({ slug }: CommentsProps) {
     const t = useTranslations('Blog.comments');
+    const locale = useLocale();
     const [comments, setComments] = useState<Comment[]>([]);
     const [newComment, setNewComment] = useState('');
     const [loading, setLoading] = useState(true);
@@ -108,7 +109,7 @@ export default function Comments({ slug }: CommentsProps) {
                                 <div className={styles.commentHeader}>
                                     <span className={styles.author}>{t('anonymous')}</span>
                                     <span className={styles.date}>
-                                        {new Date(comment.created_at).toLocaleDateString(undefined, {
+                                        {new Date(comment.created_at).toLocaleDateString(locale, {
                                             year: 'numeric',
                                             month: 'short',
                                             day: 'numeric'

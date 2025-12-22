@@ -55,7 +55,7 @@
   --secondary: var(--color-accent);
   --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
   --glow-primary: radial-gradient(circle at 50% 50%, var(--color-primary) 0%, transparent 70%);
-  --snowflake-color: #cbd5e1;
+  --snowflake-color: #ffd1dc;
 }
 
 /* Dark Theme Overrides */
@@ -91,7 +91,7 @@
 
 
 :root:not([data-theme='dark']) .christmas-theme {
-  --snowflake-color: #cbd5e1;
+  --snowflake-color: #ffd1dc;
 }
 
 * {

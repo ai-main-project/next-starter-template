@@ -1,11 +1,14 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import styles from './Footer.module.css';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
     const t = useTranslations('Common');
+    const locale = useLocale();
 
     return (
         <footer className={styles.footer}>
@@ -20,9 +23,9 @@ export const Footer = () => {
                         <div className={styles.column}>
                             <h4>{t('navigation')}</h4>
                             <ul>
-                                <li><Link href="/">{t('home')}</Link></li>
-                                <li><Link href="/blog">{t('posts')}</Link></li>
-                                <li><Link href="/about">{t('about')}</Link></li>
+                                <li><Link href={`/${locale}`}>{t('home')}</Link></li>
+                                <li><Link href={`/${locale}/blog`}>{t('posts')}</Link></li>
+                                <li><Link href={`/${locale}/about`}>{t('about')}</Link></li>
                             </ul>
                         </div>
                         <div className={styles.column}>

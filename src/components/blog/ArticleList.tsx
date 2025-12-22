@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
@@ -15,7 +17,7 @@ export const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
         <div className={styles.container}>
             {articles.map((article) => (
                 <article key={article.id} className={styles.card}>
-                    <Link href={`/blog/${article.id}`} className={styles.link}>
+                    <Link href={`/${locale}/blog/${article.id}`} className={styles.link}>
                         <h2 className={styles.title}>{article.title}</h2>
                         <p className={styles.excerpt}>{article.excerpt}</p>
                         <div className={styles.meta}>

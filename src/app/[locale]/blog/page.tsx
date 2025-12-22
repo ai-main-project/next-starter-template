@@ -1,12 +1,10 @@
 import { getArticles } from '@/lib/articles';
 import { ArticleList } from '@/components/blog/ArticleList';
-
-
-
-
+import { getTranslations } from 'next-intl/server';
 
 export default async function BlogPage() {
     const articles = await getArticles();
+    const t = await getTranslations('Blog');
 
     return (
         <div style={{ padding: '2rem 1rem' }}>
@@ -19,7 +17,7 @@ export default async function BlogPage() {
                 WebkitTextFillColor: 'transparent',
                 fontWeight: 'bold'
             }}>
-                Blog
+                {t('title')}
             </h1>
             <ArticleList articles={articles} />
         </div>
