@@ -15,8 +15,9 @@ export const Profile = () => {
                 alt="Vist's Avatar"
                 className={styles.avatar}
             />
-            <h1 className={styles.name}>Vist</h1>
-            <p className={styles.bio}>{t('bio')}</p>
+            <h1 className={styles.name}>Vist Wang</h1>
+            <p className={styles.bio}>{t('bio1')}</p>
+            <p className={styles.bio}>{t('bio2')}</p>
         </Card>
     );
 };

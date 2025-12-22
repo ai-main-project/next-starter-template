@@ -9,7 +9,11 @@
     "viewAll": "View All Posts →",
     "latestArticles": "Latest Articles",
     "latestSubtitle": "Thoughts on development, design, and workflow.",
-    "footerBrand": "Exploring code, design, and the future of web development.",
+    "latestTools": "Latest Tools",
+    "toolsSubtitle": "Useful utilities for developers and designers.",
+    "latestGames": "Latest Games",
+    "gamesSubtitle": "Interactive experiences and fun experiments.",
+    "footerBrand": "Exploring a new world at the intersection of AI, design engineering, user experience, and modern web technologies.",
     "navigation": "Navigation",
     "social": "Social",
     "rights": "All rights reserved.",
@@ -24,6 +28,8 @@
     "downloadSvg": "Download SVG",
     "copyImage": "Copy to Clipboard",
     "copied": "Copied!",
+    "tryNow": "Try it now →",
+    "playNow": "Play now →",
     "tabs": {
       "text": "URL/Text",
       "wifi": "WiFi",
@@ -75,7 +81,8 @@
   },
   "About": {
     "title": "About Me",
-    "bio": "I'm a passionate developer and designer focused on building beautiful, accessible, and performant web experiences. With a background in both engineering and design, I bridge the gap between code and creativity.",
+    "bio1": "I'm a senior engineer specializing in front-end technology exploration. I believe code is a tool for thought, and for many years I have been deeply involved in modern cutting-edge engineering systems, dedicated to creating elegant, efficient, and accessible user experiences.",
+    "bio2": "The technological world is constantly evolving, and I always adhere to the principle of lifelong learning. Currently, my passion is focused on my efforts in artificial intelligence and front-end development, integrating research on how to leverage next-generation technologies such as large models, intelligent UIs, and enhanced interactions to create alternative product possibilities.",
     "connect": "Connect",
     "newsletterTitle": "Subscribe to my newsletter",
     "newsletterDesc": "Get the latest articles and insights delivered straight to your inbox.",
@@ -153,16 +160,19 @@
     "skills": "Skills",
     "present": "Present",
     "roles": {
-      "senior": "Senior Frontend Engineer",
-      "developer": "Frontend Developer"
+      "job1": "Senior Frontend Engineer",
+      "job2": "Senior Frontend Engineer",
+      "job3": "Senior Development Engineer"
     },
     "companies": {
-      "techCorp": "Tech Corp",
-      "startup": "Startup Inc"
+      "job1": "Leading Listed Financial Company",
+      "job2": "Top-tier Internet Company",
+      "job3": "Listed Software Company"
     },
     "descriptions": {
-      "senior": "Leading the frontend team, building scalable web applications using React and Next.js. Architected the core design system and improved site performance by 40%.",
-      "developer": "Developed key features for the main product dashboard. Collaborated closely with designers to implement pixel-perfect UIs."
+      "job1": "Led the frontend team in building Web and mobile low-code platforms using React and Node.js. Established robust Monorepo engineering capabilities and configurability.",
+      "job2": "Led the frontend team to build scalable Web applications and mobile pages using React and Node.js. Developed the core budget efficiency system and implemented page configurability.",
+      "job3": "Developed the company's core software platform, mobile platform, and IM system using the Angular 2+ framework. Collaborated closely with designers to implement a pixel-perfect UI component library."
     }
   },
   "Games": {

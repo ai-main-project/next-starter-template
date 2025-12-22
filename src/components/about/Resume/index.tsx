@@ -13,22 +13,32 @@ export const Resume = () => {
                 <h2 className={styles.title}>{t('experience')}</h2>
                 <div className={styles.item}>
                     <div className={styles.header}>
-                        <h3 className={styles.role}>{t('roles.senior')}</h3>
-                        <span className={styles.period}>2020 - {t('present')}</span>
+                        <h3 className={styles.role}>{t('roles.job1')}</h3>
+                        <span className={styles.period}>2022 - {t('present')}</span>
                     </div>
-                    <p className={styles.company}>{t('companies.techCorp')}</p>
+                    <p className={styles.company}>{t('companies.job1')}</p>
                     <p className={styles.description}>
-                        {t('descriptions.senior')}
+                        {t('descriptions.job1')}
                     </p>
                 </div>
                 <div className={styles.item}>
                     <div className={styles.header}>
-                        <h3 className={styles.role}>{t('roles.developer')}</h3>
-                        <span className={styles.period}>2018 - 2020</span>
+                        <h3 className={styles.role}>{t('roles.job2')}</h3>
+                        <span className={styles.period}>2020 - 2022</span>
                     </div>
-                    <p className={styles.company}>{t('companies.startup')}</p>
+                    <p className={styles.company}>{t('companies.job2')}</p>
                     <p className={styles.description}>
-                        {t('descriptions.developer')}
+                        {t('descriptions.job2')}
+                    </p>
+                </div>
+                <div className={styles.item}>
+                    <div className={styles.header}>
+                        <h3 className={styles.role}>{t('roles.job3')}</h3>
+                        <span className={styles.period}>2017 - 2020</span>
+                    </div>
+                    <p className={styles.company}>{t('companies.job3')}</p>
+                    <p className={styles.description}>
+                        {t('descriptions.job3')}
                     </p>
                 </div>
             </div>
@@ -36,7 +46,7 @@ export const Resume = () => {
             <div className={styles.section}>
                 <h2 className={styles.title}>{t('skills')}</h2>
                 <div className={styles.skills}>
-                    {['React', 'Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Design Systems', 'GraphQL', 'PostgreSQL'].map(skill => (
+                    {['React', 'Angular2+', 'Vue', 'Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Design Systems', 'Monorepo', 'Docker', 'Flutter', 'PostgreSQL'].map(skill => (
                         <span key={skill} className={styles.skill}>{skill}</span>
                     ))}
                 </div>
