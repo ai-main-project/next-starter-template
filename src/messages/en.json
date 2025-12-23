@@ -198,7 +198,9 @@
       "highScore": "High Score",
       "start": "Press Space or Click to Start",
       "gameOver": "Game Over! Press Space or Click to Restart",
-      "jump": "Press Space or Click to Jump"
+      "jump": "Press Space or Click to Jump",
+      "duck": "Press Down or S to Duck",
+      "controls": "SPACE/UP to Jump, DOWN/S to Duck"
     }
   }
 }

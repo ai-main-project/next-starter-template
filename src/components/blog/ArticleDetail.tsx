@@ -7,6 +7,7 @@ import rehypeHighlight from 'rehype-highlight';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Article } from '@/lib/articles';
+import Image from 'next/image';
 import styles from './ArticleDetail.module.css';
 import { Button } from '@/components/core/Button';
 import BlogStats from '@/components/BlogStats';
@@ -27,13 +28,12 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({ article }) => {
             <header className={styles.heroSection}>
                 <div className={styles.heroBackground}>
                     {article.coverImage ? (
-                        <img
+                        <Image
                             src={article.coverImage}
                             alt={article.title}
-                            className={styles.heroImage}
-                            onError={(e) => {
-                                e.currentTarget.style.display = 'none';
-                            }}
+                            fill
+                            priority
+                            className={`${styles.heroImage} object-cover`}
                         />
                     ) : null}
                 </div>

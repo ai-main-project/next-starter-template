@@ -8,6 +8,7 @@ import { Card } from '@/components/core/Card';
 import { Badge } from '@/components/core/Badge';
 import { Button } from '@/components/core/Button';
 import { Article } from '@/lib/articles';
+import Image from 'next/image';
 
 interface FeaturedPostsProps {
     posts: Article[];
@@ -40,7 +41,13 @@ export const FeaturedPosts = ({ posts }: FeaturedPostsProps) => {
                             <Card hoverable className={styles.postCard}>
                                 <div className={styles.imageWrapper}>
                                     {post.coverImage ? (
-                                        <img src={post.coverImage} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <Image
+                                            src={post.coverImage}
+                                            alt={post.title}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                        />
                                     ) : (
                                         <div className={styles.placeholderCard}>
                                             <div className={styles.placeholderGradient} />

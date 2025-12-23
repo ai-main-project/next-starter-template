@@ -6,6 +6,7 @@ import rehypeHighlight from 'rehype-highlight';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import styles from './ArticleEditor.module.css';
+import { env } from '@/lib/config/env';
 import 'highlight.js/styles/github-dark.css';
 
 export const ArticleEditor = () => {
@@ -104,6 +105,9 @@ export const ArticleEditor = () => {
         try {
             const res = await fetch('/api/upload', {
                 method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${env.NEXT_PUBLIC_ADMIN_API_KEY}`
+                },
                 body: formData,
             });
 
@@ -145,7 +149,10 @@ export const ArticleEditor = () => {
 
             const res = await fetch('/api/articles', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${env.NEXT_PUBLIC_ADMIN_API_KEY}`
+                },
                 body: JSON.stringify(article),
             });
 
