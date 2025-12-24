@@ -15,7 +15,7 @@ export interface Article {
 
 export async function getArticles(): Promise<Article[]> {
   try {
-    const { env } = await getCloudflareContext();
+    const { env } = await getCloudflareContext({ async: true });
     
     if (!env.DB) {
       console.error('Database not available');
@@ -49,7 +49,7 @@ export async function getArticles(): Promise<Article[]> {
 
 export async function getArticleBySlug(slug: string): Promise<Article | null> {
   try {
-    const { env } = await getCloudflareContext();
+    const { env } = await getCloudflareContext({ async: true });
     
     if (!env.DB) {
       return null;

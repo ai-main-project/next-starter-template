@@ -4,7 +4,7 @@ import { env as configEnv } from '@/lib/config/env';
 
 export async function POST(request: NextRequest) {
   try {
-    const { env } = await getCloudflareContext();
+    const { env } = await getCloudflareContext({ async: true });
     
     if (!env.DB) {
       return NextResponse.json({ error: 'Database not available' }, { status: 500 });

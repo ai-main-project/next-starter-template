@@ -8,7 +8,7 @@ export async function POST(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
-  const { env } = await getCloudflareContext();
+  const { env } = await getCloudflareContext({ async: true });
 
   if (!env.DB) {
     return NextResponse.json({ error: 'Database not available' }, { status: 500 });

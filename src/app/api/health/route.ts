@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { getCloudflareContext } from '@opennextjs/cloudflare';
 import packageJson from '../../../../package.json';
 
-export const runtime = 'edge';
+
 
 export async function GET() {
   const healthData: any = {
@@ -16,7 +16,7 @@ export async function GET() {
   };
 
   try {
-    const { env } = await getCloudflareContext();
+    const { env } = await getCloudflareContext({ async: true });
     
     if (env.DB) {
       // Perform a simple query to verify database connectivity
