@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { encryptPayload, setAuthCookie } from '@/lib/auth';
 import { env } from '@/lib/config/env';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json() as any;

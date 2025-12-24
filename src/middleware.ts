@@ -8,10 +8,12 @@ const intlMiddleware = createMiddleware({
 });
 
 const JWT_SECRET = process.env.JWT_SECRET;
-if (!JWT_SECRET) {
+const isBuild = process.env.NEXT_PHASE === 'phase-production-build' || process.env.CI === 'true';
+
+if (!JWT_SECRET && !isBuild) {
   throw new Error('JWT_SECRET environment variable is not set');
 }
-const secret = new TextEncoder().encode(JWT_SECRET);
+const secret = new TextEncoder().encode(JWT_SECRET || 'placeholder-secret-for-build');
 
 export default async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;

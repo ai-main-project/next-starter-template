@@ -29,7 +29,9 @@ const getEnv = () => {
     DB_BINDING: process.env.DB_BINDING,
   };
 
-  if (process.env.NODE_ENV === 'production') {
+  const isBuild = process.env.NEXT_PHASE === 'phase-production-build' || process.env.CI === 'true';
+
+  if (process.env.NODE_ENV === 'production' && !isBuild) {
     return envSchema.parse(env);
   }
 
