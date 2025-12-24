@@ -4,12 +4,6 @@ import { env as configEnv } from '@/lib/config/env';
 
 export async function POST(request: NextRequest) {
   try {
-    // Auth check
-    const authHeader = request.headers.get('Authorization');
-    if (authHeader !== `Bearer ${configEnv.NEXT_PUBLIC_ADMIN_API_KEY}`) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const { env } = await getCloudflareContext();
     
     if (!env.DB) {

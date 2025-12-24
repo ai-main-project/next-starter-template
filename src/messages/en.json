@@ -202,5 +202,13 @@
       "duck": "Press Down or S to Duck",
       "controls": "SPACE/UP to Jump, DOWN/S to Duck"
     }
+  },
+  "Auth": {
+    "loginTitle": "Admin Login",
+    "loginSubtitle": "Please enter your password to continue",
+    "password": "Password",
+    "login": "Login",
+    "loggingIn": "Logging in...",
+    "logout": "Logout"
   }
 }

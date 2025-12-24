@@ -13,12 +13,6 @@ const S3 = new S3Client({
 
 export async function POST(request: NextRequest) {
   try {
-    // Auth check
-    const authHeader = request.headers.get('Authorization');
-    if (authHeader !== `Bearer ${env.NEXT_PUBLIC_ADMIN_API_KEY}`) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const formData = await request.formData();
     const file = formData.get('file') as File;
 

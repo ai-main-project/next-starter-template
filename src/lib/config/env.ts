@@ -9,7 +9,8 @@ const envSchema = z.object({
   PUBLIC_URL_BASE: z.string().url(),
 
   // Security
-  NEXT_PUBLIC_ADMIN_API_KEY: z.string().min(16),
+  ADMIN_PASSWORD: z.string().min(8),
+  JWT_SECRET: z.string().min(32),
 
   // Database (Cloudflare D1 binding is handled via getCloudflareContext, 
   // but we can track the binding name)
@@ -23,7 +24,8 @@ const getEnv = () => {
     R2_SECRET_ACCESS_KEY: process.env.R2_SECRET_ACCESS_KEY || 'b858d579b5840e0aeebdd6ae8547cb542ed845ffe8438844386bcfb95374ebca',
     R2_BUCKET_NAME: process.env.R2_BUCKET_NAME || 'vist-blog-assets',
     PUBLIC_URL_BASE: process.env.NEXT_PUBLIC_ASSETS_BASE_URL || 'https://assets.vistwang.com',
-    NEXT_PUBLIC_ADMIN_API_KEY: process.env.NEXT_PUBLIC_ADMIN_API_KEY || 'placeholder-very-long-secret-key-change-me',
+    ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
+    JWT_SECRET: process.env.JWT_SECRET,
     DB_BINDING: process.env.DB_BINDING,
   };
 
