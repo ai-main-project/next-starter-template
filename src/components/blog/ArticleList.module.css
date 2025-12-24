@@ -75,3 +75,44 @@
         font-size: 1.25rem;
     }
 }
+
+.createButtonContainer {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 2.5rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.createButton {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.75rem;
+    background: transparent;
+    color: var(--color-primary);
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid var(--color-primary);
+}
+
+.createButton:hover {
+    transform: translateY(-2px);
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+    box-shadow: 0 5px 15px -5px var(--color-primary);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

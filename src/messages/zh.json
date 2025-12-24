@@ -72,7 +72,9 @@
       "high": "高 (30%)",
       "settings": "功能设置"
     },
-    "save": "保存"
+    "save": "保存",
+    "confirm": "确定",
+    "cancel": "取消"
   },
   "Hero": {
     "title1": "设计. 代码.",
@@ -139,6 +141,8 @@
       "tags": "技术, 生活, 编程 (逗号分隔)",
       "content": "# 你好，世界"
     },
+    "delete": "删除",
+    "deleteConfirm": "确定要删除这篇文章吗？",
     "backToBlog": "返回博客列表",
     "published": "发布于",
     "readTime": "阅读时间",

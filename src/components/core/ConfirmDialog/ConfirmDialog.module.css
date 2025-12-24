@@ -1,0 +1,86 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.dialog {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 1001;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+[data-theme="dark"] .dialog {
+    background: #141414;
+    border-color: #2e2e2e;
+}
+
+.content {
+    padding: 1.5rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-foreground);
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--color-muted-foreground);
+    line-height: 1.5;
+}
+
+.footer {
+    padding: 1rem 1.5rem;
+    background: var(--color-muted);
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    border-top: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .footer {
+    background: #1a1a1a;
+}
+
+.confirmButton.destructive {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+}
+
+.confirmButton.destructive:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.cancelButton {
+    border-radius: var(--radius-full);
+}

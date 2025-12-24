@@ -72,7 +72,9 @@
       "high": "High (30%)",
       "settings": "Function Settings"
     },
-    "save": "Save"
+    "save": "Save",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   },
   "Hero": {
     "title1": "Design. Code.",
@@ -139,6 +141,8 @@
       "tags": "tech, life, coding (comma separated)",
       "content": "# Hello World"
     },
+    "delete": "Delete",
+    "deleteConfirm": "Are you sure you want to delete this article?",
     "backToBlog": "Back to Blog",
     "published": "Published",
     "readTime": "Read time",
