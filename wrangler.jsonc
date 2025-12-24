@@ -25,5 +25,7 @@
 			"database_name": "blog_stats",
 			"database_id": "05007dbc-0001-4de1-83d5-475d4cb97fce"
 		}
-	]
+	],
+	// 保留 Dashboard 中手动设置的变量（非 Secrets）
+	"keep_vars": true
 }
