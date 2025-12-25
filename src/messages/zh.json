@@ -3,6 +3,7 @@
     "home": "首页",
     "posts": "文章",
     "about": "关于",
+    "music": "云音乐",
     "menu": "菜单",
     "readMore": "阅读文章",
     "aboutMe": "关于我",
@@ -214,5 +215,9 @@
     "login": "登录",
     "loggingIn": "登录中...",
     "logout": "退出登录"
+  },
+  "Music": {
+    "description": "享受来自 Jamendo 开源社区的独立艺术家。Jamendo 纯粹的沉浸式聆听体验。",
+    "tracksAvailable": "首曲目可用"
   }
 }

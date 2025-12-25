@@ -18,6 +18,16 @@ const nextConfig: NextConfig = {
                 hostname: 'pub-f1c43c6342e59758f2b37b268b02b514.r2.dev',
                 pathname: '/**',
             },
+            {
+                protocol: 'https',
+                hostname: '*.jamendo.com',
+                pathname: '/**',
+            },
+            {
+               protocol: 'https',
+               hostname: '*.mzstatic.com', /* Apple Music / iTunes sometimes used as fallback placeholder elsewhere, just in case */
+               pathname: '/**', 
+            }
         ],
     },
 };

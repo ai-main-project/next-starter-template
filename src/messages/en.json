@@ -3,6 +3,7 @@
     "home": "Home",
     "posts": "Posts",
     "about": "About",
+    "music": "Cloud Music",
     "menu": "Menu",
     "readMore": "Read Articles",
     "aboutMe": "About Me",
@@ -214,5 +215,9 @@
     "login": "Login",
     "loggingIn": "Logging in...",
     "logout": "Logout"
+  },
+  "Music": {
+    "description": "Enjoy independent artists from the Jamendo open source community. Jamendo: A purely immersive listening experience.",
+    "tracksAvailable": "TRACKS AVAILABLE"
   }
 }
